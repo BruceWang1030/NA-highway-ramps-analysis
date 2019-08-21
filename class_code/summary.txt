@@ -1,0 +1,32 @@
+Summary
+
+- For Provinces like BC, QB, ON with developed highway system, the results are much more accurate than other areas like SK and YT. The main problem of missing coordinates for developed areas is the Statistics Canada dataset we have, since some ramps are not recognized and labeled. 
+
+Details 
+
+- All testing points are manually selected on Google Maps. The results of accuracy is within 100m (500m will increase the accuracy by about 10%): 
+
+BC
+- Accuracy: 18/20
+- Coords not found: e.g. Some testing points are ramps on google maps but not labeled on our dataset.
+- The original size of test was 26, but 6 of them were found out taken on roads.
+AB
+- Accuracy: 10/12
+- Coords not found: Same reason as BC
+- The original size of test was 26, but 4 of them were found out taken on crossroads.
+QC
+- Accuracy: 19/20
+- Coords not found: [-73.670352, 45.503264] is located at a highway close to the center of Montreal, but the highway ramp is not included in our dataset.
+ON
+- Accuracy : 9/19 (where 10/19 points are on HWY407 )
+- Examples of coords found :[-77.625027, 44.118343], [-77.24632, 44.219048], [-75.700586, 44.600193], [-75.614359, 45.421315]
+- Examples of coords not found : Points on HWY 407 as the Database does not contain any data for HWY407 (maybe because of privatization)
+SK
+Accuracy : 0/20
+- Examples of coords used : [-107.17544, 51.474782], [-102.178339, 51.048217], [-102.2392, 51.077073], [-102.357509, 51.210226]
+- In Saskatchewan there were mostly roads coming and joining the hwy, and in the database they are not classified as class code 25 which is the case for ramps. Most of these were just roads intersecting the hwy so result for ramps isn’t good.
+YT
+- Accuracy : 0/17
+- Examples of coords used : [-136.580922, 62.831367], [-135.648546, 62.074645], [-128.932127, 60.052822], [-129.05198, 60.026647], [-133.29465, 60.489571] ,[-137.034065, 60.854608]
+- In Yukon, like SK  there were mostly roads coming and joining the hwy, and in the database they are not classified as class code 25 which is the case for ramps.  We also tried to see if there any ramps there, so our internal test gave us that there only 44 ramps in whole Yukon as per the dataset. Most of these were just roads intersecting the hwy so the result for ramps is not good.
+
